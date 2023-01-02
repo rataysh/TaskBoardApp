@@ -11,5 +11,10 @@ module.exports = function (api) {
                 {extensions: ["css", "sass", "scss"]},
             ],
         ],
+        env: {
+            production: {
+                plugins: ["react-native-paper/babel"],
+            },
+        },
     };
 };

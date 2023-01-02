@@ -1,9 +1,8 @@
 /** @format */
 
 import React from "react";
-import {Button} from "react-native-paper";
-import {Text} from "react-native";
-import {darkerColor} from "../style/variables";
+import {FAB} from "react-native-paper";
+import {projectPage} from "../style/pageProgectStyle";
 
 interface ButtonText {
     text: string;
@@ -13,13 +12,11 @@ interface ButtonText {
 export const ButtonAdd: React.FC<ButtonText> = ({text, setActive}) => {
     return (
         <>
-            <Button
+            <FAB
                 icon='plus'
-                mode='contained'
-                buttonColor={darkerColor}
-                onPress={() => setActive(true)}>
-                <Text>{text}</Text>
-            </Button>
+                style={projectPage.addButton}
+                onPress={() => setActive(true)}
+            />
         </>
     );
 };

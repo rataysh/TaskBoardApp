@@ -1,23 +1,33 @@
 /** @format */
 
 import {StyleSheet} from "react-native";
-import {backgroundMain} from "./variables";
+import {backgroundMain, darkerColor, lightColor} from "./variables";
 
 export const projectPage = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: backgroundMain,
+        // backgroundColor: backgroundMain,
         alignItems: "center",
         justifyContent: "center",
         display: "flex",
         flexDirection: "column",
     },
+    projectList: {width: "90%", height: "100%"},
     projectBox: {
-        marginTop: "5%",
-        marginLeft: "auto",
-        marginRight: "auto",
-        display: "flex",
-        flexWrap: "wrap",
+        paddingBottom: 12,
+        marginTop: 10,
+        marginBottom: 10,
+        borderBottomWidth: 1,
+        borderStyle: "solid",
+        borderColor: lightColor,
+        borderRadius: 25,
+    },
+    addButton: {
+        position: "absolute",
+        margin: 16,
+        right: 0,
+        bottom: 0,
+        borderRadius: 100,
     },
     // header: {
     //     display: "flex",

@@ -1,18 +1,14 @@
 /** @format */
 
 import {useState} from "react";
-import {Text, View} from "react-native";
+import {View} from "react-native";
 import {ButtonAdd} from "../components/ButtonAdd";
 import {projectPage} from "../style/pageProgectStyle";
 import {dataProject} from "../src/offlineData";
 import {EachProject} from "../components/projects/EachProject";
-// import React, {useState} from "react";
-// import {ButtonAdd} from "../components/ButtonAdd";
-// import {EachProject} from "../components/projects/EachProject";
-// import "../styles/projects.scss";
-// import {AboutMe} from "../components/footer/footer";
-// import {CreateNewProjectModal} from "../components/projects/CreateNewProjectModal";
-// import {useTypedSelector} from "../hooks/useTypedSelector";
+import {Divider} from "react-native-paper";
+import {Text} from "react-native-paper";
+
 
 export const PageProjects: React.FC = () => {
     const [createNewProjectModal, setCreateNewProjectModal] =
@@ -21,29 +17,26 @@ export const PageProjects: React.FC = () => {
     // const dataProject = useTypedSelector((state) => state.projects);
 
     return (
-        <View>
+        <View style={projectPage.projectList}>
             <View>
-                <Text>Task Board</Text>
-                <View>
-                    <ButtonAdd
-                        setActive={setCreateNewProjectModal}
-                        text='Create new project'
-                    />
-
-                    <View>
-                        {dataProject.map((project) => (
-                            <EachProject project={project} key={project.id} />
-                        ))}
-                    </View>
+                <View style={{marginTop: 50}}>
+                    <Text variant='displayMedium'>Task Board</Text>
+                    <Divider style={{paddingBottom: 1}} />
+                </View>
+                <View style={{marginTop: 18}}>
+                    {dataProject.map((project) => (
+                        <EachProject project={project} key={project.id} />
+                    ))}
                 </View>
                 {/* <CreateNewProjectModal
                     active={createNewProjectModal}
                     setActive={setCreateNewProjectModal}
                 /> */}
-                {/* <>
-                    <AboutMe />
-                </> */}
             </View>
+            <ButtonAdd
+                setActive={setCreateNewProjectModal}
+                text='Create new project'
+            />
         </View>
     );
 };

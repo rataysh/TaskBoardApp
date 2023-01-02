@@ -1,14 +1,11 @@
 /** @format */
 
-import { IProject } from "../../src/interface/IProject";
-import {Text, View} from "react-native";
+import {IProject} from "../../src/interface/IProject";
+import {View} from "react-native";
 import {useState} from "react";
-// import {Link} from "react-router-dom";
-// import "../../styles/eachProject.scss";
-// import {IProject} from "../interface/IProject";
-// import {MdOutlineDeleteForever} from "react-icons/md";
-// import {DelConfirmModal} from "../DelConfirmModal";
-// import {useDispatch} from "react-redux";
+import {Avatar, Card, Divider, IconButton, Text} from "react-native-paper";
+import { projectPage } from "../../style/pageProgectStyle";
+
 
 interface IEachProjects {
     project: IProject;
@@ -22,6 +19,21 @@ export const EachProject: React.FC<IEachProjects> = ({project}) => {
 
     return (
         <>
+            <Card.Title
+                title={project.title}
+                titleVariant='titleLarge'
+                subtitle={project.description}
+                subtitleNumberOfLines={3}
+                style={projectPage.projectBox}
+                left={(props) => <Avatar.Icon {...props} icon='folder' />}
+                right={(props) => (
+                    <IconButton
+                        {...props}
+                        icon='arrow-right'
+                        onPress={() => {}}
+                    />
+                )}
+            />
             {/* <Link
                 onClick={() => {
                     dispatch({
@@ -33,8 +45,8 @@ export const EachProject: React.FC<IEachProjects> = ({project}) => {
                 to={`/taskBoard/tasks/${project.id}`}
                 state={project}
                 style={{textDecoration: "none"}}> */}
-                <>
-                    {/* <MdOutlineDeleteForever
+            <>
+                {/* <MdOutlineDeleteForever
                         className='del'
                         onClick={(e) => {
                             e.preventDefault();
@@ -43,11 +55,11 @@ export const EachProject: React.FC<IEachProjects> = ({project}) => {
                         }}
                     /> */}
 
-                    <View>
-                        <Text>{project.title}</Text>
-                        <Text>{project.description}</Text>
-                    </View>
-                </>
+                {/* <View>
+                    <Text variant='titleLarge'>{project.title}</Text>
+                    <Text variant='titleSmall'>{project.description}</Text>
+                </View> */}
+            </>
             {/* </Link> */}
             <>
                 {/* <DelConfirmModal
