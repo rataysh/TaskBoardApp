@@ -1,0 +1,98 @@
+/** @format */
+
+$background-main: #1f6ed4;
+$darker-color: #0000a1;
+$blue-color: #39bae8;
+$light-color: #b9edf8;
+
+$backBoard: #dddfe7;
+$textBoard: #363333;
+
+// precedence color
+$low-color: #46F7B7;
+$medium-color: #F5EB88;
+$higth-color: #FFA775;
+
+%fontMain {
+    font-family: "Poppins", sans-serif;
+}
+
+%fontDate {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 150%;
+    color: #646570;
+}
+
+%textArea {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: white;
+    overflow-y: scroll;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.5rem;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &:focus {
+        outline: none;
+        border: 0.5px solid $blue-color;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+    }
+}
+
+%modal__wrapper {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba($color: #000000, $alpha: 0.3);
+    backdrop-filter: blur(6px);
+}
+
+%modal__open {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+%modal__close {
+    height: 0;
+    display: none;
+    // overflow-y: hidden;
+}
+
+@mixin breakpoint($point) {
+    @if $point == lg {
+        @media (max-width: 992px) {
+            @content;
+        }
+    } @else if $point == md {
+        @media (max-width: 768px) {
+            @content;
+        }
+    } @else if $point == sm {
+        @media (max-width: 576px) {
+            @content;
+        }
+    } @else if $point == xs {
+        @media (max-width: 320px) {
+            @content;
+        }
+    } @else if $point == minLg {
+        @media (min-width: 993px) {
+            @content;
+        }
+    }
+}

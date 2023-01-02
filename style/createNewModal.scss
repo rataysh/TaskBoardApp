@@ -1,0 +1,299 @@
+/** @format */
+
+@import "./varCSS";
+
+// .create__new__wrapper {
+//     @extend %modal__open;
+//     background: rgba(white, $alpha: 0.8);
+//     z-index: 40;
+// }
+
+.modal_wrapper {
+    @extend %modal__wrapper;
+    z-index: 20;
+}
+
+.modal_wrapper.open {
+    @extend %modal__open;
+    z-index: 20;
+}
+
+.modal_wrapper.close {
+    @extend %modal__close;
+}
+
+
+.modalContainer {
+    position: fixed;
+    top: 2rem;
+    left: 25%;
+    width: 100%;
+
+    @include breakpoint(md) {
+        left: 10%;
+    }
+}
+
+.modalBody {
+    transition: all 0.2s linear 0s;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    padding-bottom: 1rem;
+    width: 50%;
+    height: 60%;
+    background-color: $backBoard;
+    border-radius: 15px;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.16);
+
+    @include breakpoint(md) {
+        width: 80%;
+    }
+
+    span.close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        align-self: end;
+        z-index: 30;
+
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    }
+    div {
+        width: 70%;
+        p {
+            font-weight: 500;
+            font-size: 20px;
+            margin-bottom: 0.5rem;
+            padding-top: 1.2rem;
+        }
+        input,
+        textarea {
+            padding: 1rem;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.16);
+            border-radius: 5px;
+
+            &:focus {
+                outline: none;
+                border: 0.5px solid $blue-color;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+            }
+        }
+        textarea {
+            padding-bottom: 1.5rem;
+        }
+    }
+    button {
+        // align-self: center;
+        justify-self: end;
+        margin-top: 1.5rem;
+        padding: 0.8rem;
+        width: 70%;
+        &:hover {
+            opacity: 0.7;
+        }
+        &:active {
+            opacity: 0.4;
+            color: $light-color;
+        }
+    }
+}
+
+.modalBodyTask {
+    // height: 95%;
+    // margin-top: 2%;
+    // padding-top: 1rem;
+}
+
+// radio button css style (precedence and status)
+$color1: #ffff;
+$color2: $blue-color;
+
+.radio {
+    margin: 5px;
+    input[type="radio"] {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+        z-index: 10;
+        + .radio-label {
+            &:before {
+                content: "";
+                background: $color1;
+                border-radius: 100%;
+                border: 1px solid darken($color1, 25%);
+                display: inline-block;
+                width: 1.4em;
+                height: 1.4em;
+                position: relative;
+                top: -0.2em;
+                margin-right: 1em;
+                vertical-align: top;
+                cursor: pointer;
+                text-align: center;
+                transition: all 250ms ease;
+            }
+        }
+        &:checked {
+            + .radio-label {
+                &:before {
+                    background-color: $color2;
+                    box-shadow: inset 0 0 0 4px $color1;
+                }
+            }
+        }
+        &:focus {
+            + .radio-label {
+                &:before {
+                    outline: none;
+                    border-color: $color2;
+                }
+            }
+        }
+        &:disabled {
+            + .radio-label {
+                &:before {
+                    box-shadow: inset 0 0 0 4px $color1;
+                    border-color: darken($color1, 25%);
+                    background: darken($color1, 25%);
+                }
+            }
+        }
+        + .radio-label {
+            &:empty {
+                &:before {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+// input file style
+div.file {
+    // position: relative;
+    margin-bottom: 1.5rem;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+
+    div.containerFile {
+        // position: absolute;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        width: 140%;
+    }
+
+    // form.form {
+    //     // background-color: green;
+    //     // width: 100%;
+    // }
+
+    div.file-upload-wrapper {
+        $defaultColor: $color2;
+        $height: 3rem;
+
+        position: relative;
+        // width: 100%;
+        height: $height;
+
+        &:after {
+            content: attr(data-text);
+            font-size: 18px;
+            padding: 14px 15px;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // width: calc(100% - 40px);
+            // pointer-events: none;
+            // line-height: $height - 20px;
+            background: #fff;
+            display: block;
+            z-index: 20;
+            height: $height;
+            color: #999;
+            box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.16);
+            border-radius: 5px;
+            font-weight: 300;
+        }
+
+        &:before {
+            content: "Upload";
+            position: absolute;
+            top: 0;
+            right: 0;
+            // display: inline-block;
+            // height: 60px;
+            background: $defaultColor;
+            color: #ffff;
+            font-weight: 500;
+            z-index: 25;
+            font-size: 16px;
+            line-height: $height;
+            padding: 0 15px;
+            border-radius: 0 5px 5px 0;
+            text-transform: uppercase;
+            // pointer-events: none;
+        }
+
+        &:hover {
+            &:before {
+                background: darken($defaultColor, 10%);
+            }
+        }
+        input {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 99;
+            height: $height;
+            margin: 0;
+            padding: 0;
+            // display: block;
+            cursor: pointer;
+            width: 100%;
+        }
+    }
+}
+
+// .input-file {
+//     position: relative;
+// }
+// .input-file-btn {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     position: absolute;
+//     left: 0;
+//     cursor: pointer;
+//     color: white;
+//     text-align: center;
+//     background-color: $color2;
+//     margin-top: 1rem;
+//     width: 50%;
+//     height: 40px;
+//     border-radius: 5px;
+//     transition: background-color 0.2s;
+// }
+// .input-file input[type="file"] {
+//     z-index: -1;
+//     // opacity: 0;
+//     // display: block;
+//     width: 0;
+//     height: 0;
+// }
