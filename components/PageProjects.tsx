@@ -20,7 +20,7 @@ export const PageProjects = () => {
             <View>
                 <Text>Task Board</Text>
                 <View>
-                    <Text>TEST TEMP</Text>
+                    <Text>TEST TEMPPrP</Text>
                     {/* <ButtonAdd
                         setActive={setCreateNewProjectModal}
                         text='Create new project'
