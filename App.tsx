@@ -2,11 +2,12 @@
 
 import {StatusBar} from "expo-status-bar";
 import {StyleSheet, Text, View} from "react-native";
-import {PageProjects} from "./components/PageProjects";
+import {PageProjects} from "./pages/PageProjects";
+import {projectPage} from "./style/pageProgectStyle";
 
 export default function App() {
     return (
-        <View>
+        <View style={projectPage.container}>
             {/* <Text>Open up App.tsx to start working on your app!!!!</Text> */}
             <PageProjects />
             <StatusBar style='auto' />

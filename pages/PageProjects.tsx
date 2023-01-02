@@ -1,6 +1,11 @@
 /** @format */
 
+import {useState} from "react";
 import {Text, View} from "react-native";
+import {ButtonAdd} from "../components/ButtonAdd";
+import {projectPage} from "../style/pageProgectStyle";
+import {dataProject} from "../src/offlineData";
+import {EachProject} from "../components/projects/EachProject";
 // import React, {useState} from "react";
 // import {ButtonAdd} from "../components/ButtonAdd";
 // import {EachProject} from "../components/projects/EachProject";
@@ -9,9 +14,9 @@ import {Text, View} from "react-native";
 // import {CreateNewProjectModal} from "../components/projects/CreateNewProjectModal";
 // import {useTypedSelector} from "../hooks/useTypedSelector";
 
-export const PageProjects = () => {
-    // const [createNewProjectModal, setCreateNewProjectModal] =
-    //     useState<boolean>(false);
+export const PageProjects: React.FC = () => {
+    const [createNewProjectModal, setCreateNewProjectModal] =
+        useState<boolean>(false);
 
     // const dataProject = useTypedSelector((state) => state.projects);
 
@@ -20,17 +25,16 @@ export const PageProjects = () => {
             <View>
                 <Text>Task Board</Text>
                 <View>
-                    <Text>TEST TEMPPrP</Text>
-                    {/* <ButtonAdd
+                    <ButtonAdd
                         setActive={setCreateNewProjectModal}
                         text='Create new project'
-                    /> */}
+                    />
 
-                    {/* <div className='projectsBox'>
+                    <View>
                         {dataProject.map((project) => (
                             <EachProject project={project} key={project.id} />
                         ))}
-                    </div> */}
+                    </View>
                 </View>
                 {/* <CreateNewProjectModal
                     active={createNewProjectModal}

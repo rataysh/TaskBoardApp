@@ -13,6 +13,7 @@
     "babel-plugin-react-native-platform-specific-extensions": "^1.1.1",
     "expo": "~47.0.9",
     "expo-status-bar": "~1.4.2",
+    "moment": "^2.29.4",
     "node-sass": "^8.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
