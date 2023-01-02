@@ -1,5 +1,6 @@
 /** @format */
 
+import {StyleSheet} from "react-native";
 
 //main color
 export const backgroundMain = "#1f6ed4";
@@ -14,6 +15,9 @@ export const lowColor = "#46F7B7";
 export const mediumColor = "#F5EB88";
 export const higthColor = "#FFA775";
 
+export const divider = StyleSheet.create({
+    dividerDefault: {paddingBottom: 1},
+});
 // %fontMain {
 //     font-family: "Poppins", sans-serif;
 // }

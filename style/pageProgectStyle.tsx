@@ -29,15 +29,6 @@ export const projectPage = StyleSheet.create({
         bottom: 0,
         borderRadius: 100,
     },
-    // header: {
-    //     display: "flex",
-    //     flexDirection: "column",
-    //     paddingTop: "3rem",
-    //     paddingBottom: "1rem",
-    //     fontSize: "xx-large",
-    //     textAlign: "center",
-    //     color: "white",
-    //     borderBottom: "1px solid white",
-    // },
+    header: {marginTop: 50},
     // description: {marginTop: "2rem", color: "$backBoard", fontSize: "x-large"},
 });
