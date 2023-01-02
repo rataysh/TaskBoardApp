@@ -5,11 +5,11 @@ import {FAB} from "react-native-paper";
 import {projectPage} from "../style/pageProgectStyle";
 
 interface ButtonText {
-    text: string;
+    // text: string;
     setActive: (active: boolean) => void;
 }
 
-export const ButtonAdd: React.FC<ButtonText> = ({text, setActive}) => {
+export const ButtonAdd: React.FC<ButtonText> = ({setActive}) => {
     return (
         <>
             <FAB

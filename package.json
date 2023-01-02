@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "babel-plugin-react-native-classname-to-style": "^1.2.2",
     "babel-plugin-react-native-platform-specific-extensions": "^1.1.1",
     "expo": "~47.0.9",
@@ -21,12 +22,17 @@
     "react-native-css-transformer": "^1.2.4",
     "react-native-paper": "^5.1.2",
     "react-native-sass-transformer": "^2.0.0",
-    "react-native-web": "~0.18.9"
+    "react-native-web": "~0.18.9",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.70.6",
+    "@types/react-redux": "^7.1.25",
     "typescript": "^4.6.3"
   },
   "private": true

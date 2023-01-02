@@ -4,18 +4,17 @@ import {useState} from "react";
 import {View} from "react-native";
 import {ButtonAdd} from "../components/ButtonAdd";
 import {projectPage} from "../style/pageProgectStyle";
-import {dataProject} from "../src/offlineData";
 import {EachProject} from "../components/projects/EachProject";
-import {Divider} from "react-native-paper";
-import {Text} from "react-native-paper";
-
+import {Divider, Text} from "react-native-paper";
+import {useTypedSelector} from "../src/hooks/useTypedSelector";
 
 export const PageProjects: React.FC = () => {
     const [createNewProjectModal, setCreateNewProjectModal] =
         useState<boolean>(false);
 
-    // const dataProject = useTypedSelector((state) => state.projects);
+    const dataProject = useTypedSelector((state) => state.projects);
 
+    
     return (
         <View style={projectPage.projectList}>
             <View>
@@ -28,14 +27,14 @@ export const PageProjects: React.FC = () => {
                         <EachProject project={project} key={project.id} />
                     ))}
                 </View>
-                {/* <CreateNewProjectModal
+            </View>
+            {/* <CreateNewProjectModal
                     active={createNewProjectModal}
                     setActive={setCreateNewProjectModal}
                 /> */}
-            </View>
             <ButtonAdd
                 setActive={setCreateNewProjectModal}
-                text='Create new project'
+                // text='Create new project'
             />
         </View>
     );

@@ -1,15 +1,19 @@
 /** @format */
 
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
-import {PageProjects} from "./pages/PageProjects";
-import {projectPage} from "./style/pageProgectStyle";
+import {Provider as PaperProvider} from "react-native-paper";
+import {persistor, store} from "./src/store";
+import {PersistGate} from "redux-persist/integration/react";
+import {Provider} from "react-redux";
+import {Main} from "./src/Main";
 
 export default function App() {
     return (
-        <View style={projectPage.container}>
-            <PageProjects />
-            <StatusBar style='auto' />
-        </View>
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <PaperProvider>
+                    <Main />
+                </PaperProvider>
+            </PersistGate>
+        </Provider>
     );
 }
