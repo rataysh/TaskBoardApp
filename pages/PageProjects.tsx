@@ -8,6 +8,7 @@ import {Divider, Text} from "react-native-paper";
 import {useTypedSelector} from "../src/hooks/useTypedSelector";
 import {projectPage} from "../style/pageProgectStyle";
 import {divider} from "../style/variables";
+import { CreateNewProjectModal } from "../components/projects/CreateNewProjectModal";
 
 export const PageProjects: React.FC = () => {
     const [createNewProjectModal, setCreateNewProjectModal] =
@@ -28,10 +29,10 @@ export const PageProjects: React.FC = () => {
                     ))}
                 </View>
             </View>
-            {/* <CreateNewProjectModal
+            <CreateNewProjectModal
                     active={createNewProjectModal}
                     setActive={setCreateNewProjectModal}
-                /> */}
+                />
             <ButtonAdd
                 setActive={setCreateNewProjectModal}
                 // text='Create new project'
