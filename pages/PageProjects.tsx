@@ -8,7 +8,8 @@ import {Divider, Text} from "react-native-paper";
 import {useTypedSelector} from "../src/hooks/useTypedSelector";
 import {projectPage} from "../style/pageProgectStyle";
 import {divider} from "../style/variables";
-import { CreateNewProjectModal } from "../components/projects/CreateNewProjectModal";
+import {CreateNewProjectModal} from "../components/projects/CreateNewProjectModal";
+import {ScrollView} from "native-base";
 
 export const PageProjects: React.FC = () => {
     const [createNewProjectModal, setCreateNewProjectModal] =
@@ -18,7 +19,7 @@ export const PageProjects: React.FC = () => {
 
     return (
         <View style={projectPage.projectList}>
-            <View>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={projectPage.header}>
                     <Text variant='displayMedium'>Task Board</Text>
                     <Divider style={divider.dividerDefault} />
@@ -28,11 +29,11 @@ export const PageProjects: React.FC = () => {
                         <EachProject project={project} key={project.id} />
                     ))}
                 </View>
-            </View>
+            </ScrollView>
             <CreateNewProjectModal
-                    active={createNewProjectModal}
-                    setActive={setCreateNewProjectModal}
-                />
+                active={createNewProjectModal}
+                setActive={setCreateNewProjectModal}
+            />
             <ButtonAdd
                 setActive={setCreateNewProjectModal}
                 // text='Create new project'

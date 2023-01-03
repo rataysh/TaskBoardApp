@@ -1,11 +1,12 @@
 /** @format */
 
 import {IProject} from "../../src/interface/IProject";
-import {View} from "react-native";
 import {useState} from "react";
-import {Avatar, Card, Divider, IconButton, Text} from "react-native-paper";
-import { projectPage } from "../../style/pageProgectStyle";
-
+import {Avatar, Card, IconButton} from "react-native-paper";
+import {projectPage} from "../../style/pageProgectStyle";
+import {Box} from "native-base";
+import {TouchableOpacity, View} from "react-native";
+import {DelConfirmModal} from "../DelConfirmModal";
 
 interface IEachProjects {
     project: IProject;
@@ -18,7 +19,7 @@ export const EachProject: React.FC<IEachProjects> = ({project}) => {
     // const dispatch = useDispatch();
 
     return (
-        <>
+        <TouchableOpacity onPress={() => {}}>
             <Card.Title
                 title={project.title}
                 titleVariant='titleLarge'
@@ -29,8 +30,10 @@ export const EachProject: React.FC<IEachProjects> = ({project}) => {
                 right={(props) => (
                     <IconButton
                         {...props}
-                        icon='arrow-right'
-                        onPress={() => {}}
+                        icon='delete-outline'
+                        onPress={() => {
+                            setActive(() => true);
+                        }}
                     />
                 )}
             />
@@ -45,29 +48,15 @@ export const EachProject: React.FC<IEachProjects> = ({project}) => {
                 to={`/taskBoard/tasks/${project.id}`}
                 state={project}
                 style={{textDecoration: "none"}}> */}
-            <>
-                {/* <MdOutlineDeleteForever
-                        className='del'
-                        onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setActive(!active);
-                        }}
-                    /> */}
-
-                {/* <View>
-                    <Text variant='titleLarge'>{project.title}</Text>
-                    <Text variant='titleSmall'>{project.description}</Text>
-                </View> */}
-            </>
+            <></>
             {/* </Link> */}
             <>
-                {/* <DelConfirmModal
+                <DelConfirmModal
                     delItem={project}
                     active={active}
                     setActive={setActive}
-                /> */}
+                />
             </>
-        </>
+        </TouchableOpacity>
     );
 };
