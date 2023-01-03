@@ -2,16 +2,16 @@
 
 import {useState} from "react";
 import {View} from "react-native";
-import {ButtonAdd} from "../components/ButtonAdd";
-import {EachProject} from "../components/projects/EachProject";
+import {ButtonAdd} from "../../components/ButtonAdd";
+import {EachProject} from "../../components/projects/EachProject";
 import {Divider, Text} from "react-native-paper";
-import {useTypedSelector} from "../src/hooks/useTypedSelector";
-import {projectPage} from "../style/pageProgectStyle";
-import {divider} from "../style/variables";
-import {CreateNewProjectModal} from "../components/projects/CreateNewProjectModal";
+import {useTypedSelector} from "../hooks/useTypedSelector";
+import {projectPage} from "../../style/pageProgectStyle";
+import {divider} from "../../style/variables";
+import {CreateNewProjectModal} from "../../components/projects/CreateNewProjectModal";
 import {ScrollView} from "native-base";
 
-export const PageProjects: React.FC = () => {
+export const ScreenProjects: React.FC = () => {
     const [createNewProjectModal, setCreateNewProjectModal] =
         useState<boolean>(false);
 
@@ -34,10 +34,7 @@ export const PageProjects: React.FC = () => {
                 active={createNewProjectModal}
                 setActive={setCreateNewProjectModal}
             />
-            <ButtonAdd
-                setActive={setCreateNewProjectModal}
-                // text='Create new project'
-            />
+            <ButtonAdd setActive={setCreateNewProjectModal} />
         </View>
     );
 };
