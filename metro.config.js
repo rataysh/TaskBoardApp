@@ -7,13 +7,13 @@ module.exports = (async () => {
         resolver: {sourceExts},
     } = await getDefaultConfig();
     return {
-        transformer: {
-            babelTransformerPath: require.resolve(
-                "react-native-sass-transformer"
-            ),
-        },
-        resolver: {
-            sourceExts: [...sourceExts, "scss", "sass", "css"],
-        },
+        // transformer: {
+        //     babelTransformerPath: require.resolve(
+        //         "react-native-sass-transformer"
+        //     ),
+        // },
+        // resolver: {
+        //     sourceExts: [...sourceExts, "sass", "scss", "css"],
+        // },
     };
 })();

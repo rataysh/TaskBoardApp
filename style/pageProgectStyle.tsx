@@ -12,7 +12,7 @@ export const projectPage = StyleSheet.create({
         display: "flex",
         flexDirection: "column",
     },
-    projectList: {width: "90%", height: "100%"},
+    projectList: {width: "100%", height: "100%"},
     projectBox: {
         paddingBottom: 12,
         marginTop: 10,

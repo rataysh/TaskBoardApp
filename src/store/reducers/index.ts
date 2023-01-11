@@ -5,10 +5,11 @@ import {modalViewReducer} from "./modalViewReducer";
 import {taskBoardDataReducer} from "./taskBoard/taskBoardDataReducer";
 import {projectsReducer} from "./mainReducer/projectsReducer";
 import {subTaskViewReducer} from "./subTaskViewReducer";
-import {idTaskReducer} from "./idTaskAndSub/idTaskReducer";
-import {idSubTaskReducer} from "./idTaskAndSub/idSubTaskReducer";
+import {idTaskReducer} from "./getIdReducers/idTaskReducer";
+import {idSubTaskReducer} from "./getIdReducers/idSubTaskReducer";
 import {modalViewDelTaskReducer} from "./delTask/modalViewDelTask";
 import {idForDelTaskReducer} from "./delTask/idForDelTask";
+import {idProjectReducer} from "./getIdReducers/idProjectReducer";
 
 import {persistReducer} from "redux-persist";
 // import storage from "redux-persist/lib/storage";
@@ -23,6 +24,7 @@ export const rootResucer = combineReducers({
     idSubTask: idSubTaskReducer,
     modalViewDelTask: modalViewDelTaskReducer,
     idForDelTask: idForDelTaskReducer,
+    idProject: idProjectReducer,
 });
 
 const persistConfig = {

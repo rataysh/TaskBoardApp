@@ -96,7 +96,7 @@ export const CreateNewProjectModal: React.FC<ICreateNewProjectModal> = ({
                         </FormControl.ErrorMessage> */}
 
                         <FormControl.Label>
-                            Project discription
+                            Project description
                         </FormControl.Label>
                         <Input
                             size={"lg"}

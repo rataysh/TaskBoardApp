@@ -4,12 +4,13 @@ import {useState} from "react";
 import {View} from "react-native";
 import {ButtonAdd} from "../../components/ButtonAdd";
 import {EachProject} from "../../components/projects/EachProject";
-import {Divider, Text} from "react-native-paper";
+// import {Divider, Text} from "react-native-paper";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {projectPage} from "../../style/pageProgectStyle";
-import {divider} from "../../style/variables";
+// import {divider} from "../../style/variables";
 import {CreateNewProjectModal} from "../../components/projects/CreateNewProjectModal";
-import {ScrollView} from "native-base";
+import {Box, ScrollView} from "native-base";
+// import {useNavigation} from "@react-navigation/native";
 
 export const ScreenProjects: React.FC = () => {
     const [createNewProjectModal, setCreateNewProjectModal] =
@@ -17,13 +18,17 @@ export const ScreenProjects: React.FC = () => {
 
     const dataProject = useTypedSelector((state) => state.projects);
 
+    // const navigation = useNavigation();
+
     return (
-        <View style={projectPage.projectList}>
+        <Box 
+        style={projectPage.projectList}
+        >
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={projectPage.header}>
+                {/* <View style={projectPage.header}>
                     <Text variant='displayMedium'>Task Board</Text>
                     <Divider style={divider.dividerDefault} />
-                </View>
+                </View> */}
                 <View style={{marginTop: 18}}>
                     {dataProject.map((project) => (
                         <EachProject project={project} key={project.id} />
@@ -35,6 +40,6 @@ export const ScreenProjects: React.FC = () => {
                 setActive={setCreateNewProjectModal}
             />
             <ButtonAdd setActive={setCreateNewProjectModal} />
-        </View>
+        </Box>
     );
 };
